@@ -32,8 +32,10 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+		//스프링은 백에서 만든 값을 model로 
 		
-		return "home";
-	}
+		return "home"; //servlet cpntext에서 반응
+		// /web
+ 	}
 	
 }

@@ -11,32 +11,24 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
-@RunWith(SpringJUnit4ClassRunner.class) //메서드 단위로 테스트용 코드 
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml") //테스트시 사용될 코드
-@Log4j2 //Log4j가 취약해서 교체함.
+@RunWith(SpringJUnit4ClassRunner.class) // 메서드단위로 테스트용 코드
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml") // 테스트시 사용될 코드
+@Log4j2 // Log4j가 취약해서 Log4j2로 교체함.
 public class HotelTests {
 
-	@Setter(onMethod_ =  @Autowired)
-	private sampleHotel hotel;
+	@Setter(onMethod_ = @Autowired)
+	private SampleHotel hotel; // new SampleHotel(chef);
 	
-	@Test
-	public void testExist() { 
-		assertNotNull(hotel);
-		log.info(hotel);
-		log.info("-----------------------------------------");
-		log.info(hotel.getChef());
-	
-	
-	
-	/*
-	@Test //메서드별로 테스트가 가능하다. import.org.junit.test;
-	public void testExist() { 
-		//테스트용 메서드 
-		assertNotNull(restaurant); //객체가 null 인지 판단한다. 아니어야만 테스트가 성공
+	@Test // 메서드 단위로 테스트
+	public void testExist() {
 		
-		log.info(restaurant); //toString 가능 
-		log.info("------------------------");
-		log.info(restaurant.getChef()); //레스토랑객체에서 쉐프를 요청함.
-		*/
+		assertNotNull(hotel);
+		
+		log.info(hotel);
+		log.info("----------------------");
+		log.info(hotel.getChef());
+		// SampleHotel(chef=Chef(name=null, age=0))
+		// INFO  org.zerock.sample.HotelTests(testExist28) - ----------------------
+		// INFO  org.zerock.sample.HotelTests(testExist29) - Chef(name=null, age=0)
 	}
 }
