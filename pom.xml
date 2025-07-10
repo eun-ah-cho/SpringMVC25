@@ -138,7 +138,8 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
+		
+		<dependency><!-- tag라이브러리용 코드 기본 내장  c:out--> 
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
