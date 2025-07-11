@@ -37,7 +37,7 @@
 	</bean>
 
 	<!-- sql문이 들어 있는 매핑용 인터페이스나 xml를 검색하는 용도 -->
-	<mybatis-spring:scan base-package="org.zerock.mapper"/>
+	<mybatis-spring:scan base-package="org.mbc.mapper"/>
 
 
 		
